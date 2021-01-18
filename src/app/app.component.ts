@@ -18,11 +18,19 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient ){}
 
   ngOnInit(): void {
-    this.http.get('https://localhost:44385/api/products?pagesize=50').subscribe(
-      (response: IPagination ) => {
-      this.products = response.Data;
-    }, error => {
-      console.log(error);
-    } );
+    this.http.get('https://localhost:5001/api/products?pagesize=50').subscribe(
+      (response: IPagination) => {
+      this.products = response.data;
+       }, error => {
+    console.log(error);
+   });
   }
+  // ngOnInit(): void {
+  //  this.http.get('https://localhost:5001/api/products?pagesize=50').subscribe(
+  //   (response: IPagination ) => {
+  //   this.products = response.Data;
+  // }, error => {
+  //   console.log(error);
+  //  } );
+  // }
 }
