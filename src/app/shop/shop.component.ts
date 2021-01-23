@@ -24,7 +24,7 @@ brandIdSelected = 0;
 typeIdSelected = 0;
   SortSelected = 'name';
   sortOptions = [
-    {name: 'Alphabetical', value:'name'},
+    {name: 'Alphabetical', value: 'name'},
     {name: 'Price:Low to High', value: 'priceAsc'},
     {name: 'Price:High to Low', value: 'priceDesc'},
   ];
@@ -45,7 +45,7 @@ typeIdSelected = 0;
   }
   getBrands() {
     this.shopservice.getBrands().subscribe(response => {
-      this.brands = [{Id: 0, Name: 'All'}, ...response];
+      this.brands = [{id: 0, name: 'All'}, ...response];
     }, error => {
       console.log(error);
     });
@@ -72,7 +72,7 @@ typeIdSelected = 0;
    this.getProducts();
   }
   onPageChanged(event: any) {
-  this.shopParams.pageNumber= event.page;
+  this.shopParams.pageNumber = event.page;
   this.getProducts();
     }
     onSearch() {

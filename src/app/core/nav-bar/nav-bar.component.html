@@ -5,13 +5,13 @@
       <a class="p-2 text-dark" [routerLink]="['/']" routerLinkActive="active" 
       [routerLinkActiveOptions]="{exact: true}">Home</a>
       <a class="p-2 text-dark" routerLink="/shop" routerLinkActive="active">shop</a>
-      <a class="p-2 text-dark" href="#">contact</a>
+      <a class="p-2 text-dark" routerLink="/test-error"routerLinkActive="active">Errors</a>
     
     </nav>
     <div class="d-flex align-items-center">
-        <a>
+        <a routerLink='/basket' class="positon-relative" >
             <i class="fa fa-shopping-cart fa-2x mr-3 text-dark"></i>
-            <div class="cart-no">5</div>
+            <div *ngIf="(basket$ | async)" class="cart-no">{{(basket$ | async).Item.length}}</div>
         </a>   
     <a class="btn btn-outline-secondary mr-2">Sign up</a>
     <a class="btn btn-outline-secondary mr-3">Login</a>
